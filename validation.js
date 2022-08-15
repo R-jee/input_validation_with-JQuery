@@ -16,6 +16,31 @@ jQuery('#phone').keyup(function() {
 
 
 
+jQuery('#email').on("input", function() {
+        var email = $('#email').val();
+        if(IsEmail(email)==false){
+          $('#invalid_email').show();
+          return false;
+        }else{
+            $('#invalid_email').hide();
+        }
+    });
+    
+    jQuery('#phone').on("input", function() {
+        var phone = $('#phone').val();
+        if(phone == ''){
+          $('#invalid_phone').show();
+          return false;
+        }else{
+            $('#invalid_phone').hide();
+        }
+        if(phone.length == 9){
+            $('#invalid_phone').hide();
+        }else{
+            $('#invalid_phone').show();
+            return false;
+        }
+    });
 
 
 //   create span in input field like this --->   <span class="error" id="invalid_name">Name is invalid</span>
